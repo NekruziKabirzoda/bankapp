@@ -10,11 +10,13 @@ func ExampleMax() {
 		types.Payment{ID:3, Amount: 10,}, 
 		types.Payment{ID:2, Amount: 40,},
 		types.Payment{ID:1, Amount: 50,},
+		types.Payment{ID:4, Amount: 50,},
+		types.Payment{ID:5, Amount: 50,},
 				}
 
 				max :=Max(payments)
 				fmt.Println(max.ID)
 
 				//Output:
-				//1
+				//5
 }
