@@ -5,19 +5,26 @@ import (
 	"bank/pkg/bank/types"
 )
 
-func Max(payments []types.Payment) types.Payment {
+func PaymentSources(cards []types.Card) []types.PaymentSource {
 
-	max:= types.Payment{}
- 
-	for i:=0; i<len(payments); i++ {
+	
 
-		
-		if payments[0].Amount <= payments[i].Amount {
-			
-			max = payments[i]
-			
-			
+	Numb :=  []types.PaymentSource{ }
+    
+	
+	for i := 0; i < len(cards); i++ {
+
+       
+		if !cards[i].Active {
+			continue
 		}
+		if cards[i].Balance<=0 {
+			continue
+		}
+		
+		exemple1 := types.PaymentSource{ Number: cards[i].PAN , Balance: cards[i].Balance }
+       Numb = append(Numb, exemple1)
 	}
-       return  max
+return Numb
+	
 }

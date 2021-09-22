@@ -23,11 +23,17 @@ type Payment struct{
 
 type Card struct{
 	    ID       int
-		PAN      PAN
+		PAN      string
 		Balance  Money
 		MinBalance Money
 		Currency Currency
 		Color    string
 		Name     string
 		Active   bool
+}
+
+type PaymentSource struct{
+	Type string //'card'
+	Number string //'5058 xxxx xxxx 8888'
+	Balance Money //баланс в дирамах
 }

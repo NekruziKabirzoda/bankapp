@@ -5,18 +5,22 @@ import (
 	"bank/pkg/bank/types"
 )
 
-func ExampleMax() {
-	payments := []types.Payment {
-		types.Payment{ID:3, Amount: 10,}, 
-		types.Payment{ID:2, Amount: 40,},
-		types.Payment{ID:1, Amount: 50,},
-		types.Payment{ID:4, Amount: 50,},
-		types.Payment{ID:5, Amount: 50,},
+func ExamplePaymentSourses() {
+	cards := []types.Card {
+		{Balance: 10_000, Active: true, PAN: "5058 xxxx xxxx 9999",}, 
+		{Balance: 10_000, Active: true, PAN: "5058 xxxx xxxx 9991",},
+		{Balance: 0, Active: true, PAN: "5058 xxxx xxxx 9992",},
+		{Balance: 10_000, Active: false, PAN: "5058 xxxx xxxx 9993",},
+		
 				}
 
-				max :=Max(payments)
-				fmt.Println(max.ID)
+				
+				srcPay := PaymentSources (cards)
+                  for _, i := range srcPay {
+                      fmt.Println(i.Number)
+}
 
 				//Output:
-				//5
+				//5058 xxxx xxxx 9999
+				//5058 xxxx xxxx 9991
 }
