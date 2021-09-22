@@ -5,7 +5,7 @@ import (
 	"bank/pkg/bank/types"
 )
 
-func ExamplePaymentSourses() {
+func ExamplePaymentSources() {
 	cards := []types.Card {
 		{Balance: 10_000, Active: true, PAN: "5058 xxxx xxxx 9999",}, 
 		{Balance: 10_000, Active: true, PAN: "5058 xxxx xxxx 9991",},
